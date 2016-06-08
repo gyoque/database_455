@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>
+Project 1
+</h1>
+<h4>
+Anna Dozhik, Gaby Yoque, Imanuel Chen
+</h4>
+<ol type="a">
+<li>sudo /sbin/service httpd status </li>
+<li>ServerRoot is the top directory of the server (/etc/httpd). DocumentRoot is the directory where the .html files displayed on the webpage exist (/var/www/html). </li>
+<li>80 </li>
+<li>The DocumentRoot directory (/var/www/html) </li>
+<li>Traffic Logs: /etc/httpd/logs/access_log. Error Logs: /etc/httpd/logs/error_log </li>
+<li>The Directory Index File is the default file that is displayed when you navigate to a certain directory. It's nice to have one because you can control what is seen when you navigate to that directory rather than having a list of all files in the directory. </li>
+<li>In the httpd.conf file, you can enable public_html by commenting out "#disable UserDir public_html" and uncommenting "enable UserDir public_html". </li>
+<li>To create a password protected directory, you first need to create a .htpasswd file which you can do using the command "htpasswd -c [directory] [username]. Then, you need to make a .htaccess file that looks like the following:
+<br>AuthType Basic
+<br>AuthName "Secure Files"
+<br>AuthUserFile [directory to .htpasswd]
+<br>Require valid-user
+<br>After that, place the .htaccess file into the directory you want to password protect. When trying to access that directory via a browser, it should be password protected along with its subfolders.
+</li>
+<li>To send the browser to a particular document upon issuing a 404 error code, use the ErrorDocument directive. In the case of a 404 error, type <b>ErrorDocument 404 -URL to redirect to-</b> in the conf file. </li>
+<li>GET and HEAD both request data from a specified resource, but HEAD only returns HTTP headers and no document body. Both only retrieve data. POST submits data to be processed to a specified resource.</li>
+</ol>
+</body>
+</html>
